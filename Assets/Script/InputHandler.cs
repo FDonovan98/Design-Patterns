@@ -21,7 +21,6 @@ public class InputHandler : MonoBehaviour
     //So we cant press keys while replaying
     private bool isReplaying;
 
-
     void Start()
     {   
         //Bind keys with commands
