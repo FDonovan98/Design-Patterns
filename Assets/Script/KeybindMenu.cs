@@ -16,7 +16,7 @@ public class KeybindMenu : MonoBehaviour
 
         menuElements = new GameObject[numberOfInputs];
 
-        KeybindElementFactory keybindElementFactory = new KeybindElementFactory(KeybindMenuElement);
+        KeybindElementFactory keybindElementFactory = new KeybindElementFactory(KeybindMenuElement, this.transform);
 
         for (int i = 0; i < numberOfInputs - 1; i++)
         {

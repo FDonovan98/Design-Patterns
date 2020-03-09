@@ -2,5 +2,14 @@
 
 public class KeybindElementFactory : GenericObjectFactory<GameObject>
 {
-    public KeybindElementFactory(GameObject prefabObject) : base(prefabObject) {}
+    private Transform parent;
+    public KeybindElementFactory(GameObject prefabObject, Transform menu) : base(prefabObject) 
+    {
+        parent = menu;
+    }
+
+    public override GameObject GetNewInstance()
+    {
+        return Instantiate(prefab, parent);
+    }
 }

@@ -2,7 +2,7 @@
 
 public abstract class GenericObjectFactory<T> : MonoBehaviour where T : Object
 {
-    private T prefab;
+    protected T prefab;
 
     public GenericObjectFactory(T prefabObject)
     {
