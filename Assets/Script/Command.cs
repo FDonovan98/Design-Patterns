@@ -194,3 +194,13 @@ public class ReplayCommand : Command
         InputHandler.shouldStartReplay = true;
     }
 }
+
+public class ToggleUI : Command
+{
+    public ToggleUI(KeyCode key) : base(key) {}
+
+    public override void Execute(Transform UICanvas, Command command)
+    {
+        UICanvas.gameObject.SetActive(!UICanvas.gameObject.activeSelf);
+    }
+}

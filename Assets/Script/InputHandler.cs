@@ -8,8 +8,9 @@ public class InputHandler : MonoBehaviour
 {
     //The box we control with keys
     public Transform boxTrans;
+    public Transform UICanvas;
     //The different keys we need
-    private Command[] commands = new Command[7];
+    private Command[] commands = new Command[8];
     //Stores all commands for replay and undo
     public static List<Command> oldCommands = new List<Command>();
     //Box start position to know where replay begins
@@ -31,6 +32,7 @@ public class InputHandler : MonoBehaviour
         commands[4] = new MoveRight(KeyCode.D);
         commands[5] = new UndoCommand(KeyCode.Z);
         commands[6] = new ReplayCommand(KeyCode.R);
+        commands[7] = new ToggleUI(KeyCode.Space);
 
         boxStartPos = boxTrans.position;
     }
@@ -55,7 +57,14 @@ public class InputHandler : MonoBehaviour
         {
             if (Input.GetKeyDown(element.keyCode))
             {
-                element.Execute(boxTrans, element);
+                if (element.GetType().Equals(typeof(ToggleUI)))
+                {
+                    element.Execute(UICanvas, element);
+                }
+                else
+                {
+                    element.Execute(boxTrans, element);
+                }
             }
         }
     }
