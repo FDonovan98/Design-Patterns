@@ -22,7 +22,7 @@ public class InputHandler : MonoBehaviour
     //So we cant press keys while replaying
     private bool isReplaying;
 
-    void Start()
+    void Awake()
     {   
         //Bind keys with commands
         commands[0] = new DoNothing(KeyCode.B);
