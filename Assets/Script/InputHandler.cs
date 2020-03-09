@@ -9,7 +9,7 @@ public class InputHandler : MonoBehaviour
     //The box we control with keys
     public Transform boxTrans;
     //The different keys we need
-    private Command buttonW, buttonS, buttonA, buttonD, buttonB, buttonZ, buttonR;
+    private Command[] commands = new Command[7];
     //Stores all commands for replay and undo
     public static List<Command> oldCommands = new List<Command>();
     //Box start position to know where replay begins
@@ -23,15 +23,15 @@ public class InputHandler : MonoBehaviour
 
 
     void Start()
-    {
+    {   
         //Bind keys with commands
-        buttonB = new DoNothing();
-        buttonW = new MoveForward();
-        buttonS = new MoveReverse();
-        buttonA = new MoveLeft();
-        buttonD = new MoveRight();
-        buttonZ = new UndoCommand();
-        buttonR = new ReplayCommand();
+        commands[0] = new DoNothing(KeyCode.B);
+        commands[1] = new MoveForward(KeyCode.W);
+        commands[2] = new MoveReverse(KeyCode.S);
+        commands[3] = new MoveLeft(KeyCode.A);
+        commands[4] = new MoveRight(KeyCode.D);
+        commands[5] = new UndoCommand(KeyCode.Z);
+        commands[6] = new ReplayCommand(KeyCode.R);
 
         boxStartPos = boxTrans.position;
     }
@@ -52,33 +52,12 @@ public class InputHandler : MonoBehaviour
     //Check if we press a key, if so do what the key is binded to 
     public void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        foreach (Command element in commands)
         {
-            buttonA.Execute(boxTrans, buttonA);
-        }
-        else if (Input.GetKeyDown(KeyCode.B))
-        {
-            buttonB.Execute(boxTrans, buttonB);
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            buttonD.Execute(boxTrans, buttonD);
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            buttonR.Execute(boxTrans, buttonZ);
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            buttonS.Execute(boxTrans, buttonS);
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            buttonW.Execute(boxTrans, buttonW);
-        }
-        else if (Input.GetKeyDown(KeyCode.Z))
-        {
-            buttonZ.Execute(boxTrans, buttonZ);
+            if (Input.GetKeyDown(element.keyCode))
+            {
+                element.Execute(boxTrans, element);
+            }
         }
     }
 

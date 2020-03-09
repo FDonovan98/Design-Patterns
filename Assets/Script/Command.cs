@@ -1,4 +1,5 @@
 // Code credit: https://www.habrador.com/tutorials/programming-patterns/1-command-pattern/
+// Code has then been modified to 
 
 using UnityEngine;
 using System.Collections.Generic;
@@ -6,6 +7,8 @@ using System.Collections.Generic;
 //The parent class
 public abstract class Command
 {
+    // The key the action is assigned to.
+    public KeyCode keyCode;
     //How far should the box move when we press a button
     protected float moveDistance = 1f;
 
@@ -17,6 +20,11 @@ public abstract class Command
 
     //Move the box
     public virtual void Move(Transform boxTrans) { }
+
+    protected Command(KeyCode key)
+    {
+        keyCode = key;
+    }
 }
 
 
@@ -26,6 +34,9 @@ public abstract class Command
 
 public class MoveForward : Command
 {
+    public MoveForward(KeyCode key) : base(key)
+    {}
+
     //Called when we press a key
     public override void Execute(Transform boxTrans, Command command)
     {
@@ -52,6 +63,9 @@ public class MoveForward : Command
 
 public class MoveReverse : Command
 {
+    public MoveReverse(KeyCode key) : base(key)
+    {}
+
     //Called when we press a key
     public override void Execute(Transform boxTrans, Command command)
     {
@@ -78,6 +92,9 @@ public class MoveReverse : Command
 
 public class MoveLeft : Command
 {
+    public MoveLeft(KeyCode key) : base(key)
+    {}
+    
     //Called when we press a key
     public override void Execute(Transform boxTrans, Command command)
     {
@@ -104,6 +121,8 @@ public class MoveLeft : Command
 
 public class MoveRight : Command
 {
+    public MoveRight(KeyCode key) : base(key)
+    {}
     //Called when we press a key
     public override void Execute(Transform boxTrans, Command command)
     {
@@ -131,6 +150,8 @@ public class MoveRight : Command
 //For keys with no binding
 public class DoNothing : Command
 {
+    public DoNothing(KeyCode key) : base(key)
+    {}
     //Called when we press a key
     public override void Execute(Transform boxTrans, Command command)
     {
@@ -142,6 +163,8 @@ public class DoNothing : Command
 //Undo one command
 public class UndoCommand : Command
 {
+    public UndoCommand(KeyCode key) : base(key)
+    {}
     //Called when we press a key
     public override void Execute(Transform boxTrans, Command command)
     {
@@ -164,6 +187,8 @@ public class UndoCommand : Command
 //Replay all commands
 public class ReplayCommand : Command
 {
+    public ReplayCommand(KeyCode key) : base(key)
+    {}
     public override void Execute(Transform boxTrans, Command command)
     {
         InputHandler.shouldStartReplay = true;
