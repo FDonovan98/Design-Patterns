@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e13d6d0d58c554ba898935811e4bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputHandler: {fileID: 670615288}
+  KeybindMenuElement: {fileID: 0}
 --- !u!114 &657497434
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class InputHandler : MonoBehaviour
     public Transform boxTrans;
     public Transform UICanvas;
     //The different keys we need
-    private Command[] commands = new Command[8];
+    public Command[] commands = new Command[8];
     //Stores all commands for replay and undo
     public static List<Command> oldCommands = new List<Command>();
     //Box start position to know where replay begins
