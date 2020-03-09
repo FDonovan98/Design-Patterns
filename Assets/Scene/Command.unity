@@ -146,7 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 670615288}
-  KeybindMenuElement: {fileID: 0}
+  KeybindMenuElement: {fileID: 230598268096240177, guid: 1d1f7a46a678e894a899a1cf20c360c7,
+    type: 3}
 --- !u!114 &657497434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,12 +244,12 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
+  m_CellSize: {x: 320, y: 50}
   m_Spacing: {x: 0, y: 0}
-  m_Constraint: 0
+  m_Constraint: 1
   m_ConstraintCount: 2
 --- !u!1 &670615286
 GameObject:
