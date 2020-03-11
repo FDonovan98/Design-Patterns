@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-namespace CommandSpace
-{
 public class KeybindElementFactory : GenericObjectFactory<GameObject>
 {
     private Transform parent;
@@ -14,5 +12,4 @@ public class KeybindElementFactory : GenericObjectFactory<GameObject>
     {
         return Instantiate(prefab, parent);
     }
-}
 }

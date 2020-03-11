@@ -4,6 +4,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+namespace CommandSpace
+{
 //The parent class
 public abstract class Command
 {
@@ -203,4 +205,5 @@ public class ToggleUI : Command
     {
         UICanvas.gameObject.SetActive(!UICanvas.gameObject.activeSelf);
     }
+}
 }

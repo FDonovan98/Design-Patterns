@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class AgentInputHandler : MonoBehaviour
 {
-    [SerializeField]
-    private CommandObject[] commandList;
+    public CommandObject[] commandList;
 
     private void Update()
     {
         foreach (CommandObject element in commandList)
         {
-            if (Input.GetKeyDown(element.Keycode))
+            if (Input.GetKey(element.keycode))
             {
-                element.Execute(this);
+                element.Execute(this.gameObject);
             }
         }
     }

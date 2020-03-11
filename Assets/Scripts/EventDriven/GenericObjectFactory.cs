@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+namespace CommandSpace
+{
 public abstract class GenericObjectFactory<T> : MonoBehaviour where T : Object
 {
     protected T prefab;
@@ -13,4 +15,5 @@ public abstract class GenericObjectFactory<T> : MonoBehaviour where T : Object
     {
         return Instantiate(prefab);
     }
+}
 }

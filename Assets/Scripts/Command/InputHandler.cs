@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+namespace CommandSpace
+{
 public class InputHandler : MonoBehaviour
 {
     //The box we control with keys
@@ -109,4 +111,5 @@ public class InputHandler : MonoBehaviour
         //We can move the box again
         isReplaying = false;
     }
+}
 }
