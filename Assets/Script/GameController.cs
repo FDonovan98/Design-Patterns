@@ -22,9 +22,9 @@ public class GameController : MonoBehaviour
         Box box3 = new Box(box3Obj, new JumpHigh());
 
         //Add the boxes to the list of objects waiting for something to happen
-        subject.AddObserver(box1);
-        subject.AddObserver(box2);
-        subject.AddObserver(box3);
+        // subject.AddObserver(box1);
+        // subject.AddObserver(box2);
+        // subject.AddObserver(box3);
     }
 
 
