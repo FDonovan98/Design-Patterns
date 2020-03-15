@@ -7,14 +7,19 @@ public class MoveForwards : CommandObject
     {
         if (Input.GetKey(keycode))
         {
-            if (movementValues.isSprinting)
-            {
-                agent.GetComponent<Rigidbody>().velocity += movementValues.moveSpeed * movementValues.sprintMultiplier * agent.transform.forward;
-            }
-            else
-            {
-                agent.GetComponent<Rigidbody>().velocity += movementValues.moveSpeed * agent.transform.forward;
-            }
+            agent.GetComponent<Rigidbody>().velocity += CalculateVelocityVector(agent, movementValues);
+        }
+    }
+
+    public Vector3 CalculateVelocityVector(GameObject agent, MovementValues movementValues)
+    {
+        if (movementValues.isSprinting)
+        {
+            return movementValues.moveSpeed * movementValues.sprintMultiplier * agent.transform.forward;
+        }
+        else
+        {
+            return movementValues.moveSpeed * agent.transform.forward;
         }
     }
 }
