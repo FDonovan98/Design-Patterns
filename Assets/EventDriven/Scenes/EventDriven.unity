@@ -145,8 +145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e01594f1f43eb4a9a8bada03b5137f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementValues: {fileID: 11400000, guid: 41a620c1606906e42a99d3b66e0991e9, type: 2}
   commandList:
   - {fileID: 11400000, guid: b8997445de4adfa46a9c2e7f985e376d, type: 2}
+  - {fileID: 11400000, guid: fc81415a0ef75e54c97942878ffd83a4, type: 2}
 --- !u!54 &133535865
 Rigidbody:
   m_ObjectHideFlags: 0

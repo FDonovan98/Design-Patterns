@@ -3,16 +3,18 @@
 [CreateAssetMenu(fileName = "DefaultMoveForwards", menuName = "Commands/Move Forward")]
 public class MoveForwards : CommandObject
 {
-    public MovementValues movementValues;
-    public override void Execute(GameObject agent)
+    public override void Execute(GameObject agent, MovementValues movementValues)
     {
-        if (movementValues.isSprinting)
+        if (Input.GetKey(keycode))
         {
-            agent.GetComponent<Rigidbody>().velocity += movementValues.moveSpeed * movementValues.sprintMultiplier * agent.transform.forward;
-        }
-        else
-        {
-            agent.GetComponent<Rigidbody>().velocity += movementValues.moveSpeed * agent.transform.forward;
+            if (movementValues.isSprinting)
+            {
+                agent.GetComponent<Rigidbody>().velocity += movementValues.moveSpeed * movementValues.sprintMultiplier * agent.transform.forward;
+            }
+            else
+            {
+                agent.GetComponent<Rigidbody>().velocity += movementValues.moveSpeed * agent.transform.forward;
+            }
         }
     }
 }

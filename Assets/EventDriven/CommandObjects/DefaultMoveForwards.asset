@@ -13,4 +13,3 @@ MonoBehaviour:
   m_Name: DefaultMoveForwards
   m_EditorClassIdentifier: 
   keycode: 119
-  movementValues: {fileID: 11400000, guid: 41a620c1606906e42a99d3b66e0991e9, type: 2}
