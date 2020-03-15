@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb6d667b76ee2764bbadaf224b75af51, type: 3}
-  m_Name: DefaultMovementValues
+  m_Script: {fileID: 11500000, guid: dc93f1bf49a2c3b44b6498e0fc5fb332, type: 3}
+  m_Name: PlayerMoveBackwards
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  sprintingIsAToggle: 1
-  isSprinting: 1
-  sprintMultiplier: 2
+  keycode: 115

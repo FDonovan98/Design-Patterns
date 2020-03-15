@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba53cff6dde624445a0c6d9a29a2d206, type: 3}
-  m_Name: DefaultActivateSprint
+  m_Script: {fileID: 11500000, guid: d4b473f5c78143f409f458421c53db60, type: 3}
+  m_Name: PlayerMoveRight
   m_EditorClassIdentifier: 
-  keycode: 304
-  movementValues: {fileID: 11400000, guid: 41a620c1606906e42a99d3b66e0991e9, type: 2}
+  keycode: 100

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 103bf1b984ff2de4e8b32f5e49638313, type: 3}
-  m_Name: DefaultMoveForwards
+  m_Script: {fileID: 11500000, guid: e1666d895c14ee643b978c0ce4a71b56, type: 3}
+  m_Name: PlayerMoveLeft
   m_EditorClassIdentifier: 
-  keycode: 119
+  keycode: 97
