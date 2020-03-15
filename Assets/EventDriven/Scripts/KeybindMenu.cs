@@ -2,6 +2,8 @@
 
 using UnityEngine.UI;
 
+using UnityEditor.Events;
+
 public class KeybindMenu : MonoBehaviour
 {
     [SerializeField]
@@ -13,7 +15,6 @@ public class KeybindMenu : MonoBehaviour
 
     private GameObject[] menuElements;
     private Text[, ] menuElementText;
-    private InputField[] menuElementKeybind;
 
     private void Start()
     {
@@ -35,7 +36,6 @@ public class KeybindMenu : MonoBehaviour
 
         menuElements = new GameObject[numberOfInputs];
         menuElementText = new Text[numberOfInputs, 2];
-        menuElementKeybind = new InputField[numberOfInputs];
 
         KeybindElementFactory keybindElementFactory = new KeybindElementFactory(KeybindMenuElement, this.transform);
 
@@ -48,6 +48,10 @@ public class KeybindMenu : MonoBehaviour
             {
                 menuElementText[i, j] = tempTextHolder[j];
             }
+
+            InputField inputField = menuElements[i].GetComponentInChildren<InputField>();
+
+            UnityEventTools.AddPersistentListener(inputField.onValueChanged, inputHandler.commandList[i].ChangeKeycode);
         }
     }
 }
